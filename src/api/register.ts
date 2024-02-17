@@ -82,7 +82,7 @@ const event = {
   },
 };
 
-router.post<{}, any>('/create-tokens', async (req: any, res, next) => {
+router.post<{}, any>('/', async (req: any, res, next) => {
   try {
     const { code } = req.body;
     // res.send(code)
@@ -103,6 +103,7 @@ router.post<{}, any>('/create-tokens', async (req: any, res, next) => {
    
     // res.send(tokens)
   } catch (error) {
+    res.send('Error');
     next(error);
   }
 });
